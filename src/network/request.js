@@ -5,14 +5,14 @@ export function request (config) {
   // 1.创建axios实例
   const instance = axios.create({
     // 实例的基本配置
-    baseURL: 'http://123.207.32.32:8000/',
+    baseURL: 'http://152.136.185.210:8000/api/n3',
     timeout: 5000
   })
   // 2.axios拦截器
   // 拦截请求
   instance.interceptors.request.use(
     config => {
-      console.log(config);
+      // console.log(config);
       // 这里就是将请求拦截掉，这里可以做一下的事，可以更多
       // 1.config中一些数据不符合要求，可以在此拦截更改
 
@@ -23,7 +23,7 @@ export function request (config) {
       // 注意点：当我们在这里将请求拦截掉，做其他事件，做完后必须将请求内容return出去，不然在外面使用的时候接收不到请求内容
       return config
     }, err => {
-      console.log(err);
+      // console.log(err);
     }
   )
   
