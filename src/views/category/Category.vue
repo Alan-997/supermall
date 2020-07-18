@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">
+  <div class="cate-wrapper">
     <ul class="content">
       <li>我是category列表1</li>
       <li>我是category列表2</li>
@@ -61,15 +61,15 @@ import BScroll from 'better-scroll'
 export default {
   name: 'Category',
   mounted () {
-    new BScroll('.wrapper', {
-
+    new BScroll('.cate-wrapper', {
+      
     });
   }
 }
 </script>
 
 <style>
-  .wrapper {
+  .cate-wrapper {
     height: 200px;
     background-color: orange;
     /* overflow-y: scroll; */

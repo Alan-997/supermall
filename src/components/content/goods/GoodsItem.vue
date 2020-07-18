@@ -1,6 +1,6 @@
 <template>
   <div class="goods-item">
-    <img :src="goodsitem.show.img" alt="">
+    <img :src="goodsitem.show.img" alt="" @load="itemImgLoad">
     <div class="goods-info">
       <p class="describe">{{goodsitem.title}}</p>
       <span class="price">￥{{goodsitem.price}}</span>
@@ -18,6 +18,12 @@ export default {
       default () {
         return {}
       }
+    }
+  },
+  methods: {
+    itemImgLoad () {
+      // 通过事件总线$bus将内部的事件发射到外面
+      this.$bus.$emit('itemImgLoad')
     }
   }
 }
