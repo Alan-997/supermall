@@ -9,7 +9,8 @@
             ref="scroll" 
             :probeType="3" 
             @scroll="contentScroll"
-            :pullUpLoad="true" @pullingUp="loadMore">
+            :pullUpLoad="true" 
+            @pullingUp="loadMore">
       <home-swiper :banners="banners" 
                     @swiperImgLoad="swiperImgLoad"></home-swiper>
       <home-recommend :recommends="recommends"></home-recommend>
@@ -89,6 +90,15 @@ export default {
     this.getHomeGoodsdata('pop')
     this.getHomeGoodsdata('new')
     this.getHomeGoodsdata('sell')
+  },
+  activated () {
+    this.$refs.scroll.scrollTo(0, this.siteY, 1)
+    this.$refs.scroll.refresh()
+    // console.log('activated');
+  },
+  deactivated () {
+    this.siteY = this.$refs.scroll.scroll.y
+    // console.log(this.siteY);
   },
   mounted () {
     let refresh = this.debounce(this.$refs.scroll.refresh, 30)

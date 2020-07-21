@@ -1,5 +1,5 @@
 <template>
-  <div class="goods-item">
+  <div class="goods-item" @click="itemClick">
     <img :src="goodsitem.show.img" alt="" @load="itemImgLoad">
     <div class="goods-info">
       <p class="describe">{{goodsitem.title}}</p>
@@ -24,6 +24,11 @@ export default {
     itemImgLoad () {
       // 通过事件总线$bus将内部的事件发射到外面
       this.$bus.$emit('itemImgLoad')
+    },
+
+    // 点击进入详情页
+    itemClick () {
+      this.$router.push('/detail/' + this.goodsitem.iid)
     }
   }
 }
