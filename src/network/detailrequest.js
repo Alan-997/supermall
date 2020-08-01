@@ -33,3 +33,29 @@ export class Shop {
     this.score = shopInfo.score
   }
 }
+
+export class Images {
+  constructor (detailInfo) {
+    this.desc = detailInfo.desc;
+    this.key = detailInfo.detailImage[0].key;
+    this.imageList = detailInfo.detailImage[0].list
+  }
+}
+
+
+// export class GoodsParams {
+//   constructor(info, rule) {
+//     // 注: images可能没有值(某些商品有值, 某些没有值)
+//     this.image = info.images ? info.images[0] : '';
+//     this.infos = info.set;
+//     this.tables = rule.tables;
+//   }
+// }
+
+export class GoodsParams {
+  constructor (itemParams) {
+    this.image = itemParams.info.images ? itemParams.info.images[0] : '';
+    this.infos = itemParams.info.set;
+    this.tables = itemParams.rule.tables;
+  }
+}

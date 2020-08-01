@@ -57,7 +57,6 @@ export default {
     // refresh()函数是重新计算better-scroll，当DOM结构发生变化的时候一定要调用，确保滚动正常
     refresh () {
       this.scroll && this.scroll.refresh()
-      // console.log('-----'); // 判断执行次数
     },
     finishPullUp () {
       this.scroll && this.scroll.finishPullUp()

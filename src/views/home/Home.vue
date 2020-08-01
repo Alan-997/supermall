@@ -105,7 +105,7 @@ export default {
     // 接收事件总线中发射出来的事件
     this.$bus.$on('itemImgLoad', () => {
       refresh();
-    });
+    }); 
   },
   methods: {
     /* 

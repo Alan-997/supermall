@@ -6,13 +6,13 @@
     </div>
     <div class="sells-info">
       <div class="sells-info-item sells-info-left" >
-        <div class="sells">
-          <p class="count">{{shop.cSells | sellCountFilter}}</p>
-          <p class="text">总销量</p>
+        <div class="csells">
+          <div class="count">{{shop.cSells | sellCountFilter}}</div>
+          <div class="text">总销量</div>
         </div>
-        <div class="goods">
-          <p class="count">{{shop.cGoods}}</p>
-          <p class="text">全部宝贝</p>
+        <div class="cgoods">
+          <div class="count">{{shop.cGoods}}</div>
+          <div class="text">全部宝贝</div>
         </div>
       </div>
       <div class="sells-info-item sells-info-right">
@@ -91,7 +91,7 @@ export default {
     border-right: 1px solid rgba(0, 0, 0, .1);
   }
 
-  .sells {
+  .csells {
     margin-right: 10px;
   }
 
